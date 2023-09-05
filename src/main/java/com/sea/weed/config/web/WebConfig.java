@@ -24,9 +24,6 @@ public class WebConfig implements WebMvcConfigurer{
     @Autowired
     private TestInterceptor testInterceptor;
     
-    @Value("${run.type}")
-    private String runType;
-
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
         // TODO Auto-generated method stub
