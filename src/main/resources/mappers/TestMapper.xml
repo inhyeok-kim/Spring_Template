@@ -2,7 +2,7 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace="com.doongji.doongji.test.TestMapper">
+<mapper namespace="com.sea.weed.test.TestMapper">
     <select id="selectModel" resultType="TestModel">
         SELECT * FROM user;
     </select>

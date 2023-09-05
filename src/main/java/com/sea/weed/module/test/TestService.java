@@ -1,4 +1,4 @@
-package com.sea.weed.test;
+package com.sea.weed.module.test;
 
 import org.springframework.stereotype.Service;
 
