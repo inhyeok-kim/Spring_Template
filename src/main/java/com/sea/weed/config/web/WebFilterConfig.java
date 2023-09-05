@@ -1,4 +1,4 @@
-package com.sea.weed.config;
+package com.sea.weed.config.web;
 
 import org.springframework.boot.web.servlet.FilterRegistrationBean;
 import org.springframework.context.annotation.Bean;
@@ -10,7 +10,7 @@ import com.sea.weed.filter.TestFilter;
 public class WebFilterConfig {
 
     @Bean
-    public FilterRegistrationBean<TestFilter> secondFilter(){
+    public FilterRegistrationBean<TestFilter> TestFilter(){
         FilterRegistrationBean<TestFilter> registrationBean = new FilterRegistrationBean<>();
         registrationBean.setFilter(new TestFilter());
         registrationBean.addUrlPatterns("*");

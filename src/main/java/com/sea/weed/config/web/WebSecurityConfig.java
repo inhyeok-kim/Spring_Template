@@ -1,4 +1,4 @@
-package com.sea.weed.config;
+package com.sea.weed.config.web;
 
 import java.util.Arrays;
 
@@ -39,6 +39,8 @@ public class WebSecurityConfig {
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
 
         http.csrf().disable();
+        http.cors().configurationSource(corsConfigurationSource());
+        http.headers().xssProtection();
         
         return http.build();
     }
