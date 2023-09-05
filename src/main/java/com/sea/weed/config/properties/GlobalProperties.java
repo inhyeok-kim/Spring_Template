@@ -5,7 +5,7 @@ import org.springframework.context.annotation.PropertySource;
 import org.springframework.stereotype.Component;
 
 @Component
-@PropertySource("classpath:/config/GlobalConfig.properties")
+@PropertySource("classpath:/config/globalConfig.properties")
 public class GlobalProperties {
 
     @Value("${host}")

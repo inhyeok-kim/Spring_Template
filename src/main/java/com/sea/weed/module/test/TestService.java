@@ -6,7 +6,7 @@ import org.springframework.stereotype.Service;
 public class TestService {
 
 
-    public String getTest(){
+    public String getTest() throws Exception{
         
         return "yes.. hi";
     }

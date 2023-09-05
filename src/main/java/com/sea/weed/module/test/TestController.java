@@ -23,7 +23,7 @@ public class TestController {
 
 
     @RequestMapping("")
-    public String index(HttpServletRequest req){
+    public String index(HttpServletRequest req) throws Exception{
         String result = testService.getTest();
 
         log.info("Test : {}",testProperties.test);
