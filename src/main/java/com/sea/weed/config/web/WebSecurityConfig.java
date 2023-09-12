@@ -65,9 +65,10 @@ public class WebSecurityConfig {
         // setAllowCredentials : cross origin 으로부터 인증을 위한 쿠키 정보를 받을지 여부.
         // setAllowedOrigins : 허용할 origin 정보.
         // setAllowedMethods : 허용할 http methods.
-        configuration.setAllowCredentials(false); // 쿠키를 받을건지
-        configuration.setAllowedOrigins(Arrays.asList(globalProperties.HOST));
-        configuration.setAllowedMethods(Arrays.asList("GET", "POST"));
+        configuration.setAllowCredentials(true); // 쿠키를 받을건지
+        configuration.setAllowedOriginPatterns(Arrays.asList("*"));
+        configuration.setAllowedMethods(Arrays.asList("*"));
+        configuration.setAllowedHeaders(Arrays.asList("*"));
 
         UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
         source.registerCorsConfiguration("/**", configuration);
