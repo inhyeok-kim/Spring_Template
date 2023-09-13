@@ -1,5 +1,7 @@
 package com.sea.weed.config.web;
 
+import java.util.Arrays;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
@@ -13,6 +15,7 @@ import org.springframework.web.servlet.config.annotation.CorsRegistry;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
+import com.sea.weed.interceptor.AuthInterceptor;
 import com.sea.weed.interceptor.TestInterceptor;
 
 import lombok.extern.slf4j.Slf4j;
@@ -23,11 +26,16 @@ public class WebConfig implements WebMvcConfigurer{
 
     @Autowired
     private TestInterceptor testInterceptor;
+    @Autowired
+    private AuthInterceptor authInterceptor;
     
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
         // TODO Auto-generated method stub
-        registry.addInterceptor(testInterceptor);
+        registry.addInterceptor(authInterceptor)
+            .addPathPatterns("/**/*")
+            .excludePathPatterns(Arrays.asList("/auth/**"));
+
     }
 
 }

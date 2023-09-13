@@ -54,7 +54,9 @@ public class WebSecurityConfig {
             http.cors().configurationSource(corsConfigurationSource());
         }
 
-        http.headers().xssProtection();
+        http.headers().xssProtection()
+            .and()
+            .contentSecurityPolicy("script-src 'self'");
         
         return http.build();
     }

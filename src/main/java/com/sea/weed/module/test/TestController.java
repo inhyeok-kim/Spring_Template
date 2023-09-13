@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.sea.weed.config.properties.TestProperties;
+import com.sea.weed.model.UserModel;
 
 import lombok.extern.slf4j.Slf4j;
 
@@ -24,6 +25,10 @@ public class TestController {
 
     @RequestMapping("")
     public String index(HttpServletRequest req) throws Exception{
+        UserModel user = (UserModel) req.getAttribute("user");
+
+        System.out.println(user.toString());
+
         String result = testService.getTest();
 
         log.info("Test : {}",testProperties.test);

@@ -4,6 +4,7 @@ import lombok.Data;
 
 @Data
 public class UserModel {
+    private int seq;
     private String id;
     private String name;
 }
